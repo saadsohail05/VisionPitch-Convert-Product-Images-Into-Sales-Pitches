@@ -2,6 +2,7 @@ import streamlit as st
 from openai import OpenAI
 from together import Together
 import os
+import base64  
 from PIL import Image
 import io
 import requests.exceptions
