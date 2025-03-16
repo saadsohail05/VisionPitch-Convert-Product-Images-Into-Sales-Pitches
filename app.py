@@ -2,8 +2,6 @@ import streamlit as st
 from openai import OpenAI
 from together import Together
 import os
-from dotenv import load_dotenv
-import base64
 from PIL import Image
 import io
 import requests.exceptions
@@ -11,16 +9,13 @@ import time
 import asyncio
 from zonos import sync_speech, ZyphraClient
 
-# Load environment variables and configure error handling
-load_dotenv()
-
 # Initialize API clients with error handling
-openrouter_api_key = os.getenv('OPENROUTER_API_KEY')
-together_api_key = os.getenv('TOGETHER_API_KEY')
-zyphra_api_key = os.getenv('ZYPHRA_API_KEY')
-
-if not all([openrouter_api_key, together_api_key, zyphra_api_key]):
-    st.error("One or more API keys not found in environment variables. Please check your .env file.")
+try:
+    openrouter_api_key = st.secrets["OPENROUTER_API_KEY"]
+    together_api_key = st.secrets["TOGETHER_API_KEY"]
+    zyphra_api_key = st.secrets["ZYPHRA_API_KEY"]
+except Exception:
+    st.error("One or more API keys not found in Streamlit secrets. Please add them in the Streamlit Cloud dashboard.")
     st.stop()
 
 try:
