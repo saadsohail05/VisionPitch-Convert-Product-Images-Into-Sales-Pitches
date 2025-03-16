@@ -1,4 +1,4 @@
-# VisionPitch Conver Product Images Into Sales Pitches
+# VisionPitch Convert Product Images Into Sales Pitches
 
 A AI-powered web application that converts product images into compelling sales pitches with audio narration.
 
@@ -9,8 +9,6 @@ A AI-powered web application that converts product images into compelling sales 
 - Professional sales pitch generation based on product analysis
 - Text-to-speech conversion of sales pitches
 - User-friendly web interface
-- Error handling and retry mechanisms
-- Comprehensive troubleshooting guide
 
 ## Technologies Used
 
@@ -32,7 +30,7 @@ A AI-powered web application that converts product images into compelling sales 
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
+git clone [https://github.com/saadsohail05/VisionPitch-Convert-Product-Images-Into-Sales-Pitches]
 cd Zonos
 ```
 
