@@ -19,14 +19,18 @@ except Exception:
     st.error("One or more API keys not found in Streamlit secrets. Please add them in the Streamlit Cloud dashboard.")
     st.stop()
 
+# Configure headers for OpenRouter
+headers = {
+    "HTTP-Referer": "https://github.com/saadsohail05/VisionPitch-Convert-Product-Images-Into-Sales-Pitches",  # Replace with your actual site
+    "X-Title": "VisionPitch",  # Replace with your app name
+    "Authorization": f"Bearer {openrouter_api_key}"
+}
+
 try:
     qwen_client = OpenAI(
         base_url="https://openrouter.ai/api/v1",
         api_key=openrouter_api_key,
-        default_headers={
-            "HTTP-Referer": "https://img2salespitchgenerator.streamlit.app/",  
-            "X-Title": "VisionPitch"  
-        }
+        default_headers=headers  # Set default headers here
     )
 except Exception as e:
     st.error("Failed to initialize Qwen VL client. Please check your API configuration.")
