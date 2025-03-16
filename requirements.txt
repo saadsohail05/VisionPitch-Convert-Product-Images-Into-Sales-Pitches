@@ -1,0 +1,7 @@
+streamlit
+openai
+together
+python-dotenv
+Pillow
+requests
+zyphra
