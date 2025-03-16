@@ -23,6 +23,10 @@ try:
     qwen_client = OpenAI(
         base_url="https://openrouter.ai/api/v1",
         api_key=openrouter_api_key,
+        default_headers={
+            "HTTP-Referer": "https://img2salespitchgenerator.streamlit.app/",  
+            "X-Title": "VisionPitch"  
+        }
     )
 except Exception as e:
     st.error("Failed to initialize Qwen VL client. Please check your API configuration.")
